@@ -1,0 +1,52 @@
+sudo apt update
+sudo apt install -y mosquitto mosquitto-clients
+
+sudo systemctl enable mosquitto.service
+
+mosquitto -v
+
+Note: sometimes the command mosquitto -v prompts a warning message saying “Error: Address already in use“. 
+That warning message means that your Mosquitto Broker is already running, so don’t worry about that.
+
+first
+mosquitto_sub -d -t testTopic
+
+2nd
+mosquitto_pub -d -t testTopic -m "Hello world!"
+-d : enable debug messages.
+-t topic
+-m : message payload to send.
+
+
+
+NaCl (software)
+From Wikipedia, the free encyclopedia
+Jump to navigation
+Jump to search
+Not to be confused with Google Native Client.
+This article is about the cryptography library. For the configuration management software, see Salt (software).
+NaClOriginal author(s)	Daniel J. Bernstein, Tanja Lange, Peter Schwabe
+Initial release	2008; 12 years ago
+Stable release	
+20110221 / February 21, 2011; 9 years ago
+Operating system	UNIX-like
+License	public domain[1]
+Website	nacl.cr.yp.to
+
+NaCl (pronounced "salt") is an abbreviation for "Networking and Cryptography library", a public domain "...high-speed software library for network communication, encryption, decryption, signatures, etc".[2]
+
+NaCl was created by the mathematician and programmer Daniel J. Bernstein who is best known for the creation of qmail and Curve25519. The core team also includes Tanja Lange[3] and Peter Schwabe.[4] The main goal while creating NaCl, according to the paper, was to "avoid various types of cryptographic disasters suffered by previous cryptographic libraries".[1] 
+wget https://github.com/jedisct1/libsodium/releases/download/1.0.3/libsodium-1.0.3.tar.gz
+tar -zxvf libsodium-1.0.3.tar.gz
+cd libsodium-1.0.3/
+./configure
+make
+sudo make install
+
+wget https://github.com/zeromq/libzmq/releases/download/v4.3.2/zeromq-4.3.2.tar.gz
+tar -zxvf zeromq-4.3.2.tar.gz
+cd zeromq-4.3.2/
+./configure
+make
+sudo make install
+sudo ldconfig
